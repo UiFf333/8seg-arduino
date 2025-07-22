@@ -1,17 +1,16 @@
 ESP32 Dev Kit - Afișaj pe LED cu 8 Segmente
 Acest proiect utilizează un ESP32 Dev Kit pentru a controla un afișaj cu LED de 8 segmente.
-Următorul cod și conexiunile sunt concepute pentru a afișa numere sau caractere simple.
 
 Componente necesare
-ESP32 Dev Kit
+-ESP32 Dev Kit
 
-Afișaj LED cu 8 segmente (comun anod sau catod)
+-Afișaj LED cu 8 segmente 
 
-2 rezistori de 220Ω (pentru limitarea curentului)
+-2 rezistori de 220Ω 
 
-Cabluri de conexiune (jumper wires)
+-Cabluri de conexiune 
 
-Breadboard (opțional)
+-readboard 
 
 Conexiuni
 Pin ESP32	Segment LED	Rezistor
