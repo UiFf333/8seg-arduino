@@ -1,0 +1,117 @@
+#define DIGIT1 15    // D1 (CC1) - pin 10 al display-ului
+#define DIGIT2 2     // D2 (CC2) - pin 5 al display-ului
+#define SEG_A 4      // A - pin 3 al display-ului  
+#define SEG_B 16     // B - pin 9 al display-ului
+#define SEG_C 17     // C - pin 8 al display-ului
+#define SEG_D 5      // D - pin 6 al display-ului
+#define SEG_E 18     // E - pin 7 al display-ului
+#define SEG_F 19     // F - pin 4 al display-ului
+#define SEG_G 21     // G - pin 1 al display-ului
+#define SEG_DP 22    // DP - pin 2 al display-ului
+#define MAX_TIME 5
+void setup() {
+  pinMode(DIGIT1,OUTPUT);
+  pinMode (DIGIT2, OUTPUT);
+  pinMode(SEG_A, OUTPUT);
+  pinMode(SEG_B, OUTPUT);
+  pinMode(SEG_C, OUTPUT);
+  pinMode(SEG_D, OUTPUT);
+  pinMode(SEG_E, OUTPUT);
+  pinMode(SEG_F, OUTPUT);
+  pinMode(SEG_G, OUTPUT);
+  pinMode(SEG_DP, OUTPUT);
+  Serial.begin(115200);
+}
+void aprinde_Cifra(const int number){
+  digitalWrite(DIGIT1, LOW);
+  digitalWrite(DIGIT2, LOW);
+  digitalWrite(SEG_A, LOW);
+  digitalWrite(SEG_B, LOW);
+  digitalWrite(SEG_C, LOW);
+  digitalWrite(SEG_D, LOW);
+  digitalWrite(SEG_E, LOW);
+  digitalWrite(SEG_F, LOW);
+  digitalWrite(SEG_G, LOW);
+  digitalWrite(SEG_DP, LOW);
+  switch (number) {
+    case 0:
+      digitalWrite(SEG_A, HIGH);
+      digitalWrite(SEG_B, HIGH);
+      digitalWrite(SEG_C, HIGH);
+      digitalWrite(SEG_D, HIGH);
+      digitalWrite(SEG_E, HIGH);
+      digitalWrite(SEG_F, HIGH);
+      break;
+    case 1:
+      digitalWrite(SEG_B, HIGH);
+      digitalWrite(SEG_C, HIGH);
+      break;
+    case 2:
+      digitalWrite(SEG_A, HIGH);
+      digitalWrite(SEG_B, HIGH);
+      digitalWrite(SEG_G, HIGH);
+      digitalWrite(SEG_E, HIGH);
+      digitalWrite(SEG_D, HIGH);
+      break;
+    case 3:
+      digitalWrite(SEG_A, HIGH);
+      digitalWrite(SEG_B, HIGH);
+      digitalWrite(SEG_G, HIGH);
+      digitalWrite(SEG_C, HIGH);
+      digitalWrite(SEG_D, HIGH);
+      break;
+    case 4:
+      digitalWrite(SEG_B, HIGH);
+      digitalWrite(SEG_C, HIGH);
+      digitalWrite(SEG_F, HIGH);
+      digitalWrite(SEG_G, HIGH);
+      break;
+    case 5:
+      digitalWrite(SEG_A, HIGH);
+      digitalWrite(SEG_F, HIGH);
+      digitalWrite(SEG_G, HIGH);
+      digitalWrite(SEG_C, HIGH);
+      digitalWrite(SEG_D, HIGH);
+      break;
+    case 6:
+      digitalWrite(SEG_A, HIGH);
+      digitalWrite(SEG_F, HIGH);
+      digitalWrite(SEG_G, HIGH);
+      digitalWrite(SEG_C, HIGH);
+      digitalWrite(SEG_D, HIGH);
+      digitalWrite(SEG_E, HIGH);
+      break;
+    case 7:
+      digitalWrite(SEG_A, HIGH);
+      digitalWrite(SEG_B, HIGH);
+      digitalWrite(SEG_C, HIGH);
+      break;
+    case 8:
+      digitalWrite(SEG_A, HIGH);
+      digitalWrite(SEG_B, HIGH);
+      digitalWrite(SEG_C, HIGH);
+      digitalWrite(SEG_D, HIGH);
+      digitalWrite(SEG_E, HIGH);
+      digitalWrite(SEG_F, HIGH);
+      digitalWrite(SEG_G, HIGH);
+      break;
+    case 9:
+      digitalWrite(SEG_A, HIGH);
+      digitalWrite(SEG_B, HIGH);
+      digitalWrite(SEG_C, HIGH);
+      digitalWrite(SEG_D, HIGH);
+      digitalWrite(SEG_F, HIGH);
+      digitalWrite(SEG_G, HIGH);
+      break;
+    default:
+      break;
+  }
+  digitalWrite(DIGIT1, HIGH);
+}
+void loop() {
+  for(int i=0;i<10;i++){
+    aprinde_Cifra(i);
+    delay(1000);
+  }
+
+}
